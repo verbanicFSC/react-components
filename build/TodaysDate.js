@@ -48,7 +48,7 @@ var TodaysDate = function (_React$Component) {
     value: function render() {
       return React.createElement(
         "div",
-        null,
+        this.props,
         "Today's date is " + this.state.date.toLocaleTimeString()
       );
     }

@@ -23,6 +23,6 @@ export default class TodaysDate extends React.Component {
   }
 
   render() {
-    return (<div>{`Today's date is ${this.state.date.toLocaleTimeString()}`}</div>)
+    return (<div {...this.props}>{`Today's date is ${this.state.date.toLocaleTimeString()}`}</div>)
   }
 }
