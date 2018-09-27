@@ -1,5 +1,28 @@
 import React from "react"
 
-const TodaysDate = () => (<div>{`Today's date is ${Date()}`}</div>)
+export default class TodaysDate extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      date: new Date()
+    }
+  }
 
-export default TodaysDate
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID)
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    })
+  }
+
+  render() {
+    return (<div>{`Today's date is ${this.state.date.toLocaleTimeString()}`}</div>)
+  }
+}
