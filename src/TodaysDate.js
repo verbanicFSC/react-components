@@ -24,6 +24,6 @@ export default class TodaysDate extends React.Component {
   }
 
   render() {
-    return (<div {...this.props}>{`Today's date is ${this.state.date}`}</div>)
+    return (<div {...this.props}>{this.state.date}</div>)
   }
 }

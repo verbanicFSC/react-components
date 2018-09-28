@@ -50,7 +50,7 @@ var TodaysDate = function (_React$Component) {
       return React.createElement(
         'div',
         this.props,
-        'Today\'s date is ' + this.state.date
+        this.state.date
       );
     }
   }]);
