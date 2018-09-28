@@ -1,10 +1,11 @@
 import React from "react"
+import moment from 'moment'
 
 export default class TodaysDate extends React.Component {
   constructor(){
     super()
     this.state = {
-      date: new Date()
+      date: moment().format('MM/DD/YYYY hh:mm A')
     }
   }
 
@@ -18,11 +19,11 @@ export default class TodaysDate extends React.Component {
 
   tick() {
     this.setState({
-      date: new Date()
+      date: moment().format('MM/DD/YYYY hh:mm A')
     })
   }
 
   render() {
-    return (<div {...this.props}>{`Today's date is ${this.state.date.toLocaleTimeString()}`}</div>)
+    return (<div {...this.props}>{`Today's date is ${this.state.date}`}</div>)
   }
 }

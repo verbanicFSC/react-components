@@ -7,6 +7,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 import React from "react";
+import moment from 'moment';
 
 var TodaysDate = function (_React$Component) {
   _inherits(TodaysDate, _React$Component);
@@ -17,13 +18,13 @@ var TodaysDate = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (TodaysDate.__proto__ || Object.getPrototypeOf(TodaysDate)).call(this));
 
     _this.state = {
-      date: new Date()
+      date: moment().format('MM/DD/YYYY hh:mm A')
     };
     return _this;
   }
 
   _createClass(TodaysDate, [{
-    key: "componentDidMount",
+    key: 'componentDidMount',
     value: function componentDidMount() {
       var _this2 = this;
 
@@ -32,24 +33,24 @@ var TodaysDate = function (_React$Component) {
       }, 1000);
     }
   }, {
-    key: "componentWillUnmount",
+    key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       clearInterval(this.timerID);
     }
   }, {
-    key: "tick",
+    key: 'tick',
     value: function tick() {
       this.setState({
-        date: new Date()
+        date: moment().format('MM/DD/YYYY hh:mm A')
       });
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "div",
+        'div',
         this.props,
-        "Today's date is " + this.state.date.toLocaleTimeString()
+        'Today\'s date is ' + this.state.date
       );
     }
   }]);
